@@ -9,7 +9,10 @@ const Register = () => {
     const [errors,setErrors] = useState({});
   
     useEffect(()=>{
-        axiosInstance.post("/auth/login");
+        axiosInstance.get("/contacts").catch(err=>{
+            console.log(err);
+            
+        });
     },[]);
     const onChange = ({name,value}) => {
         setForm({...form, [name]:value});
